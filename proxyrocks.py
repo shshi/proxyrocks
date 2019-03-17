@@ -204,10 +204,11 @@ def post_user():
     db.session.add(u)
     db.session.commit()
     #return redirect(url_for('index'))
-    #myUser=User.query.all()
-    #print (type(myUser))
-    #print (myUser)
+
 if __name__ == '__main__':
+    myUser=User.query.all()
+    print (type(myUser))
+    print (myUser)
     db.create_all()
     app.run(debug=True).getList()
     print("finished")    
