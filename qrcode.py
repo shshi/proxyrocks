@@ -8,23 +8,7 @@ import json
 from flask import Flask, render_template, request, redirect, url_for
 #from flask_sqlalchemy import SQLAlchemy
 
-app = flask.Flask(__name__)
-
-DATABASE_URL = os.environ.get('DATABASE_URL', 'postgres://eoykghvzwktdrs:b05e54b628df4e1af727bee934b776e2070aaf5577d1197621657f8f80e14bb3@ec2-50-19-109-120.compute-1.amazonaws.com:5432/dd4h8eue8st3b1')
-
-app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
-db = SQLAlchemy(app)
-
-
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    ipaddr = db.Column(db.String(100))
-    location = db.Column(db.String(100))
-
-    def __init__(self, ipaddr, location):
-        self.ipaddr = ipaddr
-        self.location = location
-        
+app = flask.Flask(__name__)      
   
 @app.route("/")
 
@@ -77,9 +61,8 @@ def getList():
     for i in lst:
         try:
             qrcode='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+i
-            lst_item='<img src=%s width="15%">'%qrcode
-	
-	    list_sum+=lst_item           
+            lst_item='<img src=%s width="15%">'%qrcode	
+            list_sum+=lst_item           
         except Exception as e:
             #print (e)
             continue
