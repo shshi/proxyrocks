@@ -17,12 +17,12 @@ db = SQLAlchemy(app)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    ipaddr = db.Column(db.String(100))
-    location = db.Column(db.String(100))
+    ip_visitor = db.Column(db.String(100))
+    city = db.Column(db.String(100))
 
-    def __init__(self, ipaddr, location):
-        self.ipaddr = ipaddr
-        self.location = location
+    def __init__(self, ip_visitor, city):
+        self.ipaddr = ip_visitor
+        self.location = city
   
 @app.route("/")
 
