@@ -17,14 +17,14 @@ db = SQLAlchemy(app)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    ipaddr = db.Column(db.String(100))
-    location = db.Column(db.String(100))
+    username = db.Column(db.String(100))
+    email = db.Column(db.String(100))
 
-    def __init__(self, ipaddr, location):
-        self.ipaddr = ipaddr
-        self.location = location
+    def __init__(self, username, email):
+        self.ipaddr = username
+        self.location = email
     def __repr__(self):
-        return '<User %r>' %self.location
+        return '<User %r>' %self.email
   
 @app.route("/")
 
