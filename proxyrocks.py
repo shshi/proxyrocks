@@ -29,6 +29,9 @@ class User(db.Model):
 @app.route("/")
 
 def getList():
+    myUser=User.query.all()
+    print type(myUser)
+    print (myUser)
     #f = open("proxyList.log",'w',encoding='utf-8')
     url="https://raw.githubusercontent.com/AmazingDM/sub/master/ssrshare.com"
     page = u.urlopen(url)
