@@ -47,7 +47,7 @@ def getList():
 <html>
 <head>
 <title>
-	少华的贩枪乐园
+	少华的二维码贩枪乐园
 </title>
 </head>
 <body>
