@@ -67,7 +67,6 @@ def getList():
             print (e)
             #continue
     list_postfix='''
-	</table>
 </body>
 <br>
 <br>
