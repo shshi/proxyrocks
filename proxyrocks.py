@@ -21,8 +21,8 @@ class User(db.Model):
     location = db.Column(db.String(100))
 
     def __init__(self, ipaddr, location):
-        self.name = ipaddr
-        self.email = location
+        self.ipaddr = ipaddr
+        self.location = location
     def __repr__(self):
         return '<User %r>' %self.location
   
