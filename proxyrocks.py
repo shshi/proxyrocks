@@ -29,9 +29,9 @@ class User(db.Model):
 @app.route("/")
 
 def getList():
-    myUser=User.query.all()
-    print (type(myUser))
-    print (myUser)
+    #myUser=User.query.all()
+    #print (type(myUser))
+    #print (myUser)
     #f = open("proxyList.log",'w',encoding='utf-8')
     url="https://raw.githubusercontent.com/AmazingDM/sub/master/ssrshare.com"
     page = u.urlopen(url)
@@ -200,7 +200,7 @@ def base64_decode(base64_encode_str):
     base64_encode_str = fill_padding(base64_encode_str)
     return base64.urlsafe_b64decode(base64_encode_str).decode('utf-8')
 
-@app.route('/', methods=['POST'])
+@app.route('/post_user', methods=['POST'])
 def post_user():
     
     #u = User(request.form['name'], request.form['email'])
@@ -210,9 +210,6 @@ def post_user():
     #return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    myUser=User.query.all()
-    print (type(myUser))
-    print (myUser)
     db.create_all()
     app.run(debug=True).getList()
     print("finished")    
