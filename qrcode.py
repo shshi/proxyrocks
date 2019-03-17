@@ -42,7 +42,7 @@ def getList():
     except Exception as e:
         print (e)
         city="围城里"            
-        list_sum='''
+    list_sum='''
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,8 +64,8 @@ def getList():
             lst_item='<img src=%s width="15%">'%qrcode	
             list_sum+=lst_item           
         except Exception as e:
-            #print (e)
-            continue
+            print (e)
+            #continue
     list_postfix='''
 	</table>
 </body>
@@ -84,5 +84,4 @@ def getList():
 if __name__ == '__main__':
     app.run(debug=True).getList()
     print("finished")    
-
 
