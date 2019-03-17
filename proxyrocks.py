@@ -23,7 +23,7 @@ class User(db.Model):
     def __init__(self, ipaddr, location):
         self.ipaddr = ipaddr
         self.location = location
-        db.create_all()
+        
   
 @app.route("/")
 
@@ -208,7 +208,7 @@ def post_user():
     #return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    
+    #db.create_all()
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=True).getList()
     print("finished")    
