@@ -30,7 +30,7 @@ class User(db.Model):
 
 def getList():
     myUser=User.query.all()
-    print type(myUser)
+    print (type(myUser))
     print (myUser)
     #f = open("proxyList.log",'w',encoding='utf-8')
     url="https://raw.githubusercontent.com/AmazingDM/sub/master/ssrshare.com"
