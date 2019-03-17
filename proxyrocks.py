@@ -37,6 +37,8 @@ def getList():
     SSR_list=base64.b64decode(html).decode('utf-8')
     SSR_list=SSR_list.strip()   
     lst=SSR_list.splitlines()
+    global ip_visitor
+    global city
     try:
         #ip_visitor = request.remote_addr
         if request.headers.getlist("X-Forwarded-For"):
@@ -182,21 +184,25 @@ def getList():
     return list_sum
 def fill_padding(base64_encode_str):
 
-   need_padding = len(base64_encode_str) % 4 != 0
+    need_padding = len(base64_encode_str) % 4 != 0
 
-   if need_padding:
-       missing_padding = 4 - need_padding
-       base64_encode_str += '=' * missing_padding
-   return base64_encode_str
+    if need_padding:
+        missing_padding = 4 - need_padding
+        base64_encode_str += '=' * missing_padding
+    return base64_encode_str
 
 
 def base64_decode(base64_encode_str):
-   base64_encode_str = fill_padding(base64_encode_str)
-   return base64.urlsafe_b64decode(base64_encode_str).decode('utf-8')
+    base64_encode_str = fill_padding(base64_encode_str)
+    return base64.urlsafe_b64decode(base64_encode_str).decode('utf-8')
 
-@app.route("/")
-def index():
-    return '<h1>hello world</h1>'
+@app.route('/post_user', methods=['POST'])
+def post_user():
+    #u = User(request.form['name'], request.form['email'])ip_visitor city
+    u = User(ip_visitor, city)
+    db.session.add(u)
+    db.session.commit()
+    #return redirect(url_for('index'))
 
 if __name__ == '__main__':
     db.create_all()
