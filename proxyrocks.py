@@ -114,7 +114,7 @@ def getList():
 
     for i in lst:
         try:
-            qrcode='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+i
+            #qrcode='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+i
             base64_encode_str = i[6:]
             decode_str = base64_decode(base64_encode_str)
             parts = decode_str.split(':')
@@ -176,7 +176,6 @@ def getList():
   点击任务栏托盘的小飞机图标，选择“启用系统代理”，“系统代理模式”选择为“全局模式”。打开浏览器验证是否成功，否则重新换一行服务器信息。
   <br>* 建议添加多个服务器信息，方便用网不畅时快捷切换服务器。
 </p>
-<img src=%s width="5%">
 <br>
 <br>
 <div align="center" width="15%">
@@ -184,7 +183,7 @@ def getList():
   <img src="https://wx4.sinaimg.cn/mw690/4d20f2cfgy1g15sbcj8wtj20a70fa401.jpg" width="15%"></a>
 </div>
 <br><br><br><br><br>
-<html>'''%qrcode
+<html>'''
     list_sum+=list_postfix
     #print (list_sum)
     return list_sum
