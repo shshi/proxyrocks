@@ -71,7 +71,7 @@ def getList():
 <p style="font-size:14px">------<br>* 使用说明：在
   <a href = "https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" style=" color:#4f4f4f">
   https://github.com/shadowsocksrr/shadowsocksr-csharp/releases</a>
-  下载Shadowsocksr的最新版zip文件，解压后打开Shadowsocks，扫描上面任意一个二维码后点击开始即可。
+  下载Shadowsocksr的最新版zip文件，解压后打开Shadowsocks，扫描上面任意一个二维码后点击开始即可。手机请使用Potatso Lite扫描。
   <br>* 建议多扫描几个二维码信息备用，方便用网不畅时快捷切换。
 </p>
 </body>
