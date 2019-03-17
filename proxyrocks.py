@@ -201,7 +201,7 @@ def base64_decode(base64_encode_str):
 @app.route('/post_user', methods=['POST'])
 def post_user():
     
-    #u = User(request.form['name'], request.form['email'])ip_visitor city
+    #u = User(request.form['name'], request.form['email'])
     u = User(ip_visitor, city)
     db.session.add(u)
     db.session.commit()
@@ -209,8 +209,7 @@ def post_user():
 
 if __name__ == '__main__':
     #db.create_all()
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=True).getList()
+    app.run(debug=True).getList()
     print("finished")    
 
 
