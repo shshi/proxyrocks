@@ -194,6 +194,9 @@ def base64_decode(base64_encode_str):
    base64_encode_str = fill_padding(base64_encode_str)
    return base64.urlsafe_b64decode(base64_encode_str).decode('utf-8')
 
+@app.route("/")
+def index():
+    return '<h1>hello world</h1>'
 
 if __name__ == '__main__':
     db.create_all()
