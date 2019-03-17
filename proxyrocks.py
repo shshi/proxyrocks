@@ -23,6 +23,7 @@ class User(db.Model):
     def __init__(self, ipaddr, location):
         self.ipaddr = ipaddr
         self.location = location
+	db.create_all()
   
 @app.route("/")
 
@@ -199,7 +200,7 @@ def base64_decode(base64_encode_str):
 
 @app.route('/post_user', methods=['POST'])
 def post_user():
-    db.create_all()
+    
     #u = User(request.form['name'], request.form['email'])ip_visitor city
     u = User(ip_visitor, city)
     db.session.add(u)
