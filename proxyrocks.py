@@ -21,8 +21,8 @@ class User(db.Model):
     city = db.Column(db.String(100))
 
     def __init__(self, ip_visitor, city):
-        self.ipaddr = ip_visitor
-        self.location = city
+        self.ip_visitor = ip_visitor
+        self.city = city
   
 @app.route("/")
 
