@@ -200,7 +200,7 @@ def base64_decode(base64_encode_str):
 @app.route('/post_user', methods=['POST'])
 def post_user():
     #u = User(request.form['name'], request.form['email'])ip_visitor city
-    u = User(user_ip_visitor, user_city)
+    u = User(ip_visitor, city)
     db.session.add(u)
     db.session.commit()
     #return redirect(url_for('index'))
