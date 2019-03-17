@@ -181,7 +181,11 @@ def getList():
             continue
     list_sum+=list_postfix
     #print (list_sum)
+    myUser=User.query.all()
+    print (type(myUser))
+    print (myUser)
     return list_sum
+
 def fill_padding(base64_encode_str):
 
     need_padding = len(base64_encode_str) % 4 != 0
