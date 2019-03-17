@@ -24,7 +24,7 @@ class User(db.Model):
         self.ipaddr = ipaddr
         self.location = location
     def __repr__(self):
-        return '<User %r>' %self.email
+        return '<User %r>' %self.location
   
 @app.route("/")
 
