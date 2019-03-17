@@ -23,7 +23,7 @@ class User(db.Model):
     def __init__(self, ipaddr, location):
         self.ipaddr = ipaddr
         self.location = location
-	db.create_all()
+        db.create_all()
   
 @app.route("/")
 
