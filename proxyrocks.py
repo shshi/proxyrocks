@@ -111,29 +111,10 @@ def getList():
 			<th>备注<br>Remarks</th>
 		</tr>		
 '''%city
-    list_postfix='''
-	</table>
-</body>
-<p style="font-size:14px">------<br>* 使用说明：在
-  <a href = "https://github.com/shadowsocks/shadowsocks-windows/releases" style=" color:#4f4f4f">
-  https://github.com/shadowsocks/shadowsocks-windows/releases</a>
-  (Windows)或
-  <a href = "https://github.com/shadowsocks/ShadowsocksX-NG/releases" style=" color:#4f4f4f">
-  https://github.com/shadowsocks/ShadowsocksX-NG/releases</a>
-  (MacOS)下载Shadowsocks的最新版zip文件，解压后打开Shadowsocks，按照上表提供的信息输入对应的服务器、端口和密码，核对加密方法后确定。
-  点击任务栏托盘的小飞机图标，选择“启用系统代理”，“系统代理模式”选择为“全局模式”。打开浏览器验证是否成功，否则重新换一行服务器信息。
-  <br>* 建议添加多个服务器信息，方便用网不畅时快捷切换服务器。
-</p>
-<br>
-<br>
-<div align="center" >
-  <a href = "https://wx2.sinaimg.cn/mw690/4d20f2cfgy1g140et5ke9j20ee0eemyr.jpg" style=" color:#c6a300; font-size:30px;">
-  <img src="https://wx4.sinaimg.cn/mw690/4d20f2cfgy1g15sbcj8wtj20a70fa401.jpg" width="15%"></a>
-</div>
-<br><br><br><br><br>
-<html>'''
+
     for i in lst:
         try:
+            qrcode='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+i
             base64_encode_str = i[6:]
             decode_str = base64_decode(base64_encode_str)
             parts = decode_str.split(':')
@@ -182,6 +163,28 @@ def getList():
         except Exception as e:
             #print (e)
             continue
+    list_postfix='''
+	</table>
+</body>
+<p style="font-size:14px">------<br>* 使用说明：在
+  <a href = "https://github.com/shadowsocks/shadowsocks-windows/releases" style=" color:#4f4f4f">
+  https://github.com/shadowsocks/shadowsocks-windows/releases</a>
+  (Windows)或
+  <a href = "https://github.com/shadowsocks/ShadowsocksX-NG/releases" style=" color:#4f4f4f">
+  https://github.com/shadowsocks/ShadowsocksX-NG/releases</a>
+  (MacOS)下载Shadowsocks的最新版zip文件，解压后打开Shadowsocks，按照上表提供的信息输入对应的服务器、端口和密码，核对加密方法后确定。
+  点击任务栏托盘的小飞机图标，选择“启用系统代理”，“系统代理模式”选择为“全局模式”。打开浏览器验证是否成功，否则重新换一行服务器信息。
+  <br>* 建议添加多个服务器信息，方便用网不畅时快捷切换服务器。
+</p>
+<a href = %s></a>
+<br>
+<br>
+<div align="center" >
+  <a href = "https://wx2.sinaimg.cn/mw690/4d20f2cfgy1g140et5ke9j20ee0eemyr.jpg" style=" color:#c6a300; font-size:30px;">
+  <img src="https://wx4.sinaimg.cn/mw690/4d20f2cfgy1g15sbcj8wtj20a70fa401.jpg" width="15%"></a>
+</div>
+<br><br><br><br><br>
+<html>'''%qrcode
     list_sum+=list_postfix
     #print (list_sum)
     return list_sum
