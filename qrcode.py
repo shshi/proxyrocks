@@ -61,7 +61,7 @@ def getList():
     for i in lst:
         try:
             qrcode='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data='+i
-            lst_item='<img src=%s>'%qrcode	
+            lst_item='<img src=%s>&nbsp;'%qrcode	
             list_sum+=lst_item           
         except Exception as e:
             print (e)
