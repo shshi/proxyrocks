@@ -54,10 +54,6 @@ def getList():
             lst_SSR.append(i)
         except Exception as e:
             print (e)
-            
-    #list_sum+=lst_SSR
-    #list_postfix=''
-    #list_sum+=list_postfix
 
     return render_template('index.html', **locals())
 
