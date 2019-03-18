@@ -3,7 +3,7 @@ import flask
 import urllib.request as u
 import base64
 import json
-from flask import request
+from flask import Flask, render_template, request, redirect, url_for
 #from flask_sqlalchemy import SQLAlchemy
 
 app = flask.Flask(__name__)
