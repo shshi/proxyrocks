@@ -58,14 +58,14 @@ def getList():
 	<a href = "https://www.weibo.com/omega7" style="color:#4f4f4f;">漂泊的韦恩</a>
 	</p>		
 '''%city
-    SSR_list='<br><h4>SSR 列表</h4>'
+    SSR_list='<br><br><a>SSR 列表</a><br>'
     for i in lst:
         try:
             qrcode='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data='+i
             #lst_item='<img src=%s>&nbsp;'%qrcode
             lst_item='<a href=%s><img src=%s></a>&nbsp;'%(qrcode,qrcode)
             list_sum+=lst_item
-            SSR_list+='<a style="font-size:12px;">%s</a><br>'%i
+            SSR_list+='<a style="font-size:10px;">%s</a><br>'%i
         except Exception as e:
             print (e)
             #continue
@@ -75,6 +75,10 @@ def getList():
 <p style="font-size:14px">------<br>* 使用说明：在
   <a href = "https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" style=" color:#4f4f4f">
   https://github.com/shadowsocksrr/shadowsocksr-csharp/releases</a>
+  (Windows)或
+  <a href = "https://github.com/shadowsocks/ShadowsocksX-NG/releases" style=" color:#4f4f4f">
+  https://github.com/shadowsocks/ShadowsocksX-NG/releases</a>
+  (MacOS)
   下载ShadowsocksR的最新版zip文件，解压后打开ShadowsocksR（小飞机图标），小飞机将会在任务栏托盘里，点击上面任意一个二维码后用ShadowsocksR扫描。建议多扫描几个二维码信息备用，方便用网不畅时快捷切换。
   另外一种方法（推荐）：批量复制上面的SSR数据，然后在小飞机上右击选择“从剪切板导入SSR”。<br>
   * 手机端：安卓用户使用<a href = "https://github.com/shadowsocksrr/shadowsocksr-android/releases" style=" color:#4f4f4f">
