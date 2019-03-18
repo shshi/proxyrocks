@@ -1,1 +1,1 @@
-web: gunicorn get:app --log-file -
+web: gunicorn proxyrocks:app --log-file -
