@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 #import os
 import flask
-import psycopg2
+#import psycopg2
 import urllib.request as u
 import base64
 import json
