@@ -65,7 +65,7 @@ def getList():
             #lst_item='<img src=%s>&nbsp;'%qrcode
             lst_item='<a href=%s><img src=%s></a>&nbsp;'%(qrcode,qrcode)
             list_sum+=lst_item
-            SSR_list+='<p>i</p>'
+            SSR_list+='<p>%s</p>'%i
         except Exception as e:
             print (e)
             #continue
