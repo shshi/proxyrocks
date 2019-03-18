@@ -59,7 +59,7 @@ def getList():
     list_sum+=list_postfix
     #print (list_sum)
     #return list_sum
-    return render_template('rocks.html',u=list_sum)
+    return render_template('index.html',u=list_sum)
 
 if __name__ == '__main__':
     app.run(debug=True).getList()
