@@ -82,6 +82,7 @@ def getList():
         except Exception as e:
             print (e)
             #continue
+    return render_template('get.html', **locals())
 
 def fill_padding(base64_encode_str):
 
