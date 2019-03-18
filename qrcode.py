@@ -58,7 +58,7 @@ def getList():
 	<a href = "https://www.weibo.com/omega7" style="color:#4f4f4f;">漂泊的韦恩</a>
 	</p>		
 '''%city
-    SSR_list='<br><br><a>SSR 列表</a><br>'
+    SSR_list='<br><br><a>SSR 列表：</a><br>'
     for i in lst:
         try:
             qrcode='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data='+i
