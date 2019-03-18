@@ -1,1 +1,1 @@
-web: gunicorn qrcode:app --log-file -
+web: gunicorn proxyrocks:app --log-file -
