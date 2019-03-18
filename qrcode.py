@@ -58,15 +58,18 @@ def getList():
 	<a href = "https://www.weibo.com/omega7" style="color:#4f4f4f;">漂泊的韦恩</a>
 	</p>		
 '''%city
+SSR_list='<h4>SSR 列表</h4><br>'
     for i in lst:
         try:
             qrcode='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data='+i
             #lst_item='<img src=%s>&nbsp;'%qrcode
             lst_item='<a href=%s><img src=%s></a>&nbsp;'%(qrcode,qrcode)
-            list_sum+=lst_item           
+            list_sum+=lst_item
+            SSR_list+='<p>i</p>'
         except Exception as e:
             print (e)
             #continue
+    list_sum+=SSR_list
     list_postfix='''
 
 <p style="font-size:14px">------<br>* 使用说明：在
