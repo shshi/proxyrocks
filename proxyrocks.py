@@ -43,23 +43,23 @@ def getList():
         print (e)
         city="围城里"            
     list_sum=''
-    SSR_list=''
+    lst_SSR=''
+    lst_qrcode=''
     for i in lst:
         try:
-            #qrcode='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data='+i
-            #lst_item='<a href=%s><img src=%s></a>&nbsp;'%(qrcode,qrcode)
-            #list_sum+=lst_item
+            qrcode='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data='+i
+            #qrcode_i='<a href=%s><img src=%s></a>&nbsp;'%(qrcode,qrcode)
+            lst_qrcode+=qrcode_i
             #SSR_list+='<a style="font-size:10px;">%s</a><br>'%i
-            SSR_list+=i
+            lst_SSR+=i
         except Exception as e:
             print (e)
-            #continue
-    list_sum+=SSR_list
-    list_postfix=''
-    list_sum+=list_postfix
-    #print (list_sum)
-    #return list_sum
-    return render_template('index.html',u=list_sum)
+            
+    #list_sum+=lst_SSR
+    #list_postfix=''
+    #list_sum+=list_postfix
+
+    return render_template('index.html', **locals())
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True).getList()
