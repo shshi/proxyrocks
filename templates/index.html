@@ -12,7 +12,7 @@
 	<a href = "https://www.weibo.com/omega7" style="color:#4f4f4f;">漂泊的韦恩</a>
 	</p>
 	
-	{% for qr in lst_qrcode %}
+	{% for qr in lst_qrcode %} <!--jinja2的语法-->
 	<a href={{ qr }}><img src={{ qr }}></a>&nbsp;
 	{% endfor %}
 	
