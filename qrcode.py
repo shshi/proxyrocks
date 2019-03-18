@@ -65,7 +65,7 @@ def getList():
             #lst_item='<img src=%s>&nbsp;'%qrcode
             lst_item='<a href=%s><img src=%s></a>&nbsp;'%(qrcode,qrcode)
             list_sum+=lst_item
-            SSR_list+='<p>%s</p>'%i
+            SSR_list+='<a>%s</a>'%i
         except Exception as e:
             print (e)
             #continue
@@ -75,8 +75,10 @@ def getList():
 <p style="font-size:14px">------<br>* 使用说明：在
   <a href = "https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" style=" color:#4f4f4f">
   https://github.com/shadowsocksrr/shadowsocksr-csharp/releases</a>
-  下载Shadowsocksr的最新版zip文件，解压后打开Shadowsocks，点击上面任意一个二维码后扫描。手机请使用Potatso Lite扫描。
-  <br>* 建议多扫描几个二维码信息备用，方便用网不畅时快捷切换。
+  下载ShadowsocksR的最新版zip文件，解压后打开ShadowsocksR（小飞机图标），小飞机将会在任务栏托盘里，点击上面任意一个二维码后用ShadowsocksR扫描。建议多扫描几个二维码信息备用，方便用网不畅时快捷切换。&#10;
+  另外一种方法（推荐）：批量复制上面的SSR数据，然后在小飞机上右击选择“从剪切板导入SSR”。<br>
+  * 手机端：安卓用户使用<a href = "https://github.com/shadowsocksrr/shadowsocksr-android/releases" style=" color:#4f4f4f">
+  ShadowsocksR</a>扫描，苹果用户请使用Potatso Lite(仅见国外账号app store)。
 </p>
 </body>
 <br>
