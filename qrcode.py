@@ -79,7 +79,7 @@ def getList():
   <a href = "https://github.com/shadowsocks/ShadowsocksX-NG/releases" style=" color:#4f4f4f">
   https://github.com/shadowsocks/ShadowsocksX-NG/releases</a>
   (MacOS)
-  下载ShadowsocksR的最新版zip文件，解压后打开ShadowsocksR（小飞机图标），小飞机将会在任务栏托盘里，点击上面任意一个二维码后用ShadowsocksR扫描。建议多扫描几个二维码信息备用，方便用网不畅时快捷切换。
+  下载ShadowsocksR的最新版zip文件，解压后打开ShadowsocksR，任务栏托盘里将会有个小飞机，点击上面任意一个二维码后右击小飞机扫描。建议多扫描几个二维码信息备用，方便用网不畅时快捷切换。
   另外一种方法（推荐）：批量复制上面的SSR数据，然后在小飞机上右击选择“从剪切板导入SSR”。<br>
   * 手机端：安卓用户使用<a href = "https://github.com/shadowsocksrr/shadowsocksr-android/releases" style=" color:#4f4f4f">
   ShadowsocksR</a>扫描，苹果用户请使用Potatso Lite(仅见国外账号app store)。
