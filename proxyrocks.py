@@ -50,7 +50,7 @@ def getList():
             qrcode='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data='+i
             #qrcode_i='<a href=%s><img src=%s></a>&nbsp;'%(qrcode,qrcode)
             lst_qrcode+=qrcode_i
-            #SSR_list+='<a style="font-size:10px;">%s</a><br>'%i
+            #lst_SSR+='<a style="font-size:10px;">%s</a><br>'%i
             lst_SSR+=i
         except Exception as e:
             print (e)
