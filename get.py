@@ -75,7 +75,8 @@ def getList():
                 remarks=remarks.replace('SSRTOOL_','')
             group = base64_decode(param_dic['group'])
 
-            dic_item={server:%s, port:%s, password:%s, method:%s, protocol:%s, remarks:%s}%(server, port, password, method, protocol, remarks)
+            dic_item={'server':server, 'port':port, 'password':password, 'method':method, 'protocol':protocol, 'remarks':remarks}
+            #dic_item={server:%s, port:%s, password:%s, method:%s, protocol:%s, remarks:%s}%(server, port, password, method, protocol, remarks)
             #lst_item='服务器地址: %s, 端口: %s, 协议: %s, 加密方法: %s, 密码: %s, 混淆: %s, 混淆参数: %s, 协议参数: %s, 备注: %s, 分组: %s'% (server, port, protocol, method, password, obfs, obfsparam, protoparam, remarks, group)
             lst_table.append(dic_item)
         except Exception as e:
