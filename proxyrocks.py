@@ -42,19 +42,20 @@ def getList():
     except Exception as e:
         print (e)
         city="围城里"            
-    list_sum=
-    SSR_list=
+    list_sum=''
+    SSR_list=''
     for i in lst:
         try:
-            qrcode='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data='+i
+            #qrcode='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data='+i
             #lst_item='<a href=%s><img src=%s></a>&nbsp;'%(qrcode,qrcode)
-            list_sum+=lst_item
+            #list_sum+=lst_item
             #SSR_list+='<a style="font-size:10px;">%s</a><br>'%i
+            SSR_list+=i
         except Exception as e:
             print (e)
             #continue
     list_sum+=SSR_list
-    list_postfix=
+    list_postfix=''
     list_sum+=list_postfix
     #print (list_sum)
     return list_sum
