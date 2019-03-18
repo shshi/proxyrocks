@@ -55,7 +55,7 @@ def getList():
         except Exception as e:
             print (e)
 
-    return render_template('index.html', **locals())
+    return render_template('rocks.html', **locals())
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True).getList()
