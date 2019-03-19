@@ -69,7 +69,7 @@ def getList():
 
     return render_template('rocks.html', **locals(), users=User.query.all())
 
-@app.route('/user', methods=['POST'])
+@app.route('/', methods=['POST'])
 def user():
   u = User(request.form['name'], request.form['email'])
   db.session.add(u)
