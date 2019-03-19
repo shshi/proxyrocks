@@ -1,17 +1,29 @@
 #-*- coding: utf-8 -*-
-#import os
+import os
 import flask
 #import psycopg2
 import urllib.request as u
 import base64
 import json
 from flask import Flask, render_template, request, redirect, url_for
-#from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 app = flask.Flask(__name__)      
-  
-@app.route("/")
+DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:////tmp/flask_app.db')
 
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
+db = SQLAlchemy(app)
+
+class User(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  name = db.Column(db.String(100))
+  email = db.Column(db.String(100))
+
+  def __init__(self, name, email):
+    self.name = name
+    self.email = email
+    
+@app.route("/")
 def getList():
     #f = open("proxyList.log",'w',encoding='utf-8')
     url="https://raw.githubusercontent.com/AmazingDM/sub/master/ssrshare.com"
@@ -58,6 +70,8 @@ def getList():
     return render_template('rocks.html', **locals())
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',debug=True).getList()
+    db.create_all()
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True).getList()
     print("finished")    
 
