@@ -67,7 +67,7 @@ def getList():
         except Exception as e:
             print (e)
 
-    return render_template('rocks.html', **locals())
+    return render_template('rocks.html', **locals(), users=User.query.all())
 
 @app.route('/user', methods=['POST'])
 def user():
