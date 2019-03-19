@@ -69,6 +69,13 @@ def getList():
 
     return render_template('rocks.html', **locals())
 
+@app.route('/user', methods=['POST'])
+def user():
+  u = User(request.form['name'], request.form['email'])
+  db.session.add(u)
+  db.session.commit()
+  return redirect(url_for('getList'))
+
 if __name__ == '__main__':
     db.create_all()
     port = int(os.environ.get('PORT', 5000))
