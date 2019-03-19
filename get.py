@@ -26,7 +26,6 @@ def getList():
         except Exception as e:
             print (e)
             continue
-    lst_table=parse().lst_table 
     return render_template('get.html', **locals())
 
 def getCity():
@@ -92,6 +91,7 @@ def parse(ssr):
         #dic_item={server:%s, port:%s, password:%s, method:%s, protocol:%s, remarks:%s}%(server, port, password, method, protocol, remarks)
         #lst_item='服务器地址: %s, 端口: %s, 协议: %s, 加密方法: %s, 密码: %s, 混淆: %s, 混淆参数: %s, 协议参数: %s, 备注: %s, 分组: %s'% (server, port, protocol, method, password, obfs, obfsparam, protoparam, remarks, group)
         lst_table.append(dic_item)
+        return lst_table
     except Exception as e:
         print (e)
 
