@@ -52,7 +52,7 @@ def getList():
             port = parts[1]
             protocol = parts[2]
             method = parts[3]
-            obfs = parts[4]
+            #obfs = parts[4]
             password_and_params = parts[5]
 
             password_and_params = password_and_params.split("/?")
@@ -68,8 +68,8 @@ def getList():
                key_and_value = part.split('=')
                param_dic[key_and_value[0]] = key_and_value[1]
 
-            obfsparam = base64_decode(param_dic['obfsparam'])
-            protoparam = base64_decode(param_dic['protoparam'])
+            #obfsparam = base64_decode(param_dic['obfsparam'])
+            #protoparam = base64_decode(param_dic['protoparam'])
             remarks = base64_decode(param_dic['remarks'])
             if 'SSRTOOL_' in remarks:
                 remarks=remarks.replace('SSRTOOL_','')
