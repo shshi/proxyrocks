@@ -9,7 +9,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = flask.Flask(__name__)      
-DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:////tmp/flask_app.db')
+DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:////flask_app.db')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 db = SQLAlchemy(app)
@@ -69,8 +69,8 @@ def getList():
 
     return render_template('rocks.html', **locals(), users=User.query.all())
 
-@app.route('/', methods=['POST'])
-def sh():
+@app.route('/user', methods=['POST'])
+def user():
   u = User(request.form['name'], request.form['email'])
   db.session.add(u)
   db.session.commit()
