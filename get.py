@@ -48,7 +48,7 @@ def getCity():
 
 def parse(lst):
     lst_table=[]
-    for i in lst:
+    for ssr in lst:
         try:
             base64_encode_str = ssr[6:]
             decode_str = base64_decode(base64_encode_str)
