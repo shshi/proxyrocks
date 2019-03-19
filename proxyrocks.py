@@ -42,7 +42,7 @@ def getList():
     except Exception as e:
         print (e)
         city="围城里"            
-    #list_sum=''
+
     lst_SSR=[]
     lst_qrcode=[]
     for i in lst:
