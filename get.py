@@ -50,9 +50,9 @@ def getCity():
         city="围城里"
     return city
 
-def parse():
+def parse(ssr):
     try:
-        base64_encode_str = i[6:]
+        base64_encode_str = ssr[6:]
         decode_str = base64_decode(base64_encode_str)
         parts = decode_str.split(':')
         if len(parts) != 6:
