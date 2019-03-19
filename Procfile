@@ -1,1 +1,1 @@
-web: gunicorn get:app --log-file -
+web: gunicorn rocks:app --log-file -
