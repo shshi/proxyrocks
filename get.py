@@ -15,11 +15,11 @@ def getList():
     page = u.urlopen(url)
     html = page.read().decode('UTF-8')
 
-    SSR_list=base64.b64decode(html).decode('utf-8')
-    SSR_list=SSR_list.strip()   
-    lst=SSR_list.splitlines()
+    lst_SSR=base64.b64decode(html).decode('utf-8')
+    lst_SSR=lst_SSR.strip()   
+    lst_SSR=lst_SSR.splitlines()
     city=getCity()
-    lst_table=parse(lst)
+    lst_table=parseSSR(lst_SSR)
     return render_template('get.html', **locals())
 
 def getCity():
@@ -46,9 +46,9 @@ def getCity():
         city="围城里"
     return city
 
-def parse(lst):
+def parseSSR(lst_SSR):
     lst_table=[]
-    for ssr in lst:
+    for ssr in lst_SSR:
         try:
             base64_encode_str = ssr[6:]
             decode_str = base64_decode(base64_encode_str)
