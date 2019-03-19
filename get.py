@@ -92,7 +92,6 @@ def parse(ssr):
         lst_table.append(dic_item)
     except Exception as e:
     print (e)
-    continue
 
 def fill_padding(base64_encode_str):
 
