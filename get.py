@@ -19,13 +19,7 @@ def getList():
     SSR_list=SSR_list.strip()   
     lst=SSR_list.splitlines()
     city=getCity()
-    lst_table=[]
-    for i in lst:
-        try:
-            parse(i)
-        except Exception as e:
-            print (e)
-            continue
+    lst_table=parse(lst)
     return render_template('get.html', **locals())
 
 def getCity():
@@ -52,48 +46,50 @@ def getCity():
         city="围城里"
     return city
 
-def parse(ssr):
-    try:
-        base64_encode_str = ssr[6:]
-        decode_str = base64_decode(base64_encode_str)
-        parts = decode_str.split(':')
-        if len(parts) != 6:
-                print('不能解析SSR链接: %s' % base64_encode_str)
+def parse(lst):
+    lst_table=[]
+    for i in lst:
+        try:
+            base64_encode_str = ssr[6:]
+            decode_str = base64_decode(base64_encode_str)
+            parts = decode_str.split(':')
+            if len(parts) != 6:
+                    print('不能解析SSR链接: %s' % base64_encode_str)
 
-        server = parts[0]
-        port = parts[1]
-        protocol = parts[2]
-        method = parts[3]
-        #obfs = parts[4]
-        password_and_params = parts[5]
+            server = parts[0]
+            port = parts[1]
+            protocol = parts[2]
+            method = parts[3]
+            #obfs = parts[4]
+            password_and_params = parts[5]
 
-        password_and_params = password_and_params.split("/?")
+            password_and_params = password_and_params.split("/?")
 
-        password_encode_str = password_and_params[0]
-        password = base64_decode(password_encode_str)
-        params = password_and_params[1]
+            password_encode_str = password_and_params[0]
+            password = base64_decode(password_encode_str)
+            params = password_and_params[1]
 
-        param_parts = params.split('&')
+            param_parts = params.split('&')
 
-        param_dic = {}
-        for part in param_parts:
-           key_and_value = part.split('=')
-           param_dic[key_and_value[0]] = key_and_value[1]
+            param_dic = {}
+            for part in param_parts:
+               key_and_value = part.split('=')
+               param_dic[key_and_value[0]] = key_and_value[1]
 
-        #obfsparam = base64_decode(param_dic['obfsparam'])
-        #protoparam = base64_decode(param_dic['protoparam'])
-        remarks = base64_decode(param_dic['remarks'])
-        if 'SSRTOOL_' in remarks:
-                remarks=remarks.replace('SSRTOOL_','')
-        group = base64_decode(param_dic['group'])
+            #obfsparam = base64_decode(param_dic['obfsparam'])
+            #protoparam = base64_decode(param_dic['protoparam'])
+            remarks = base64_decode(param_dic['remarks'])
+            if 'SSRTOOL_' in remarks:
+                    remarks=remarks.replace('SSRTOOL_','')
+            group = base64_decode(param_dic['group'])
 
-        dic_item={'server':server, 'port':port, 'password':password, 'method':method, 'protocol':protocol, 'remarks':remarks}
-        #dic_item={server:%s, port:%s, password:%s, method:%s, protocol:%s, remarks:%s}%(server, port, password, method, protocol, remarks)
-        #lst_item='服务器地址: %s, 端口: %s, 协议: %s, 加密方法: %s, 密码: %s, 混淆: %s, 混淆参数: %s, 协议参数: %s, 备注: %s, 分组: %s'% (server, port, protocol, method, password, obfs, obfsparam, protoparam, remarks, group)
-        lst_table.append(dic_item)
-        return lst_table
-    except Exception as e:
-        print (e)
+            dic_item={'server':server, 'port':port, 'password':password, 'method':method, 'protocol':protocol, 'remarks':remarks}
+            #dic_item={server:%s, port:%s, password:%s, method:%s, protocol:%s, remarks:%s}%(server, port, password, method, protocol, remarks)
+            #lst_item='服务器地址: %s, 端口: %s, 协议: %s, 加密方法: %s, 密码: %s, 混淆: %s, 混淆参数: %s, 协议参数: %s, 备注: %s, 分组: %s'% (server, port, protocol, method, password, obfs, obfsparam, protoparam, remarks, group)
+            lst_table.append(dic_item)
+        except Exception as e:
+            print (e)
+    return lst_table
 
 def fill_padding(base64_encode_str):
 
