@@ -18,6 +18,7 @@ def getList():
     SSR_list=base64.b64decode(html).decode('utf-8')
     SSR_list=SSR_list.strip()   
     lst=SSR_list.splitlines()
+    city=getCity()
     lst_table=[]
     for i in lst:
         try:
