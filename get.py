@@ -26,6 +26,7 @@ def getList():
         except Exception as e:
             print (e)
             continue
+    lst_table=parse().lst_table 
     return render_template('get.html', **locals())
 
 def getCity():
