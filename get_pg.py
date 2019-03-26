@@ -144,5 +144,4 @@ def base64_decode(base64_encode_str):
 if __name__ == '__main__':
     User().create_table()
     app.run(debug=True).getList()
-    app.run(debug=True).insert_new_record()
     print("finished")
