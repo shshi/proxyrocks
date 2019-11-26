@@ -27,6 +27,7 @@ class User(db.Model):
 def getList():
     #f = open("proxyList.log",'w',encoding='utf-8')
     url="https://raw.githubusercontent.com/AmazingDM/sub/master/ssrshare.com"
+    url="https://raw.githubusercontent.com/ssrsub/ssr/master/ssrsub"
     page = u.urlopen(url)
     html = page.read().decode('UTF-8')
 
