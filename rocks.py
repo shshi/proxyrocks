@@ -60,7 +60,7 @@ def getList():
     lst_qrcode=[]
     for i in lst:
         try:
-            qrcode_i='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data='+i
+            qrcode_i='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+i
             #qrcode_i='<a href=%s><img src=%s></a>&nbsp;'%(qrcode,qrcode)
             lst_qrcode.append(qrcode_i)
             #lst_SSR+='<a style="font-size:10px;">%s</a><br>'%i
